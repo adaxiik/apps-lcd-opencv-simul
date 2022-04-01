@@ -7,6 +7,5 @@ This program is a simple SDL simulator of the MCU LCD module.
 - Added Ticker class
 
 # Notes 
-- Display may not be pixel perfect when you change the aspect ratio
 - Ticker class: [Ticker.hpp](https://github.com/adaxiik/ticker)
 - Adjust Makefile to your needs

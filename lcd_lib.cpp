@@ -37,7 +37,7 @@ void lcd_init()
     }
     SDL_RenderSetLogicalSize(renderer, LCD_WIDTH, LCD_HEIGHT);
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, 0);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 55, 55, 55, 255);
     SDL_RenderClear(renderer);
 }
 
@@ -58,7 +58,7 @@ void lcd_update()
     }
     
     SDL_RenderPresent(renderer);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 55, 55, 55, 255);
     SDL_RenderClear(renderer);  
 }
 void lcd_clean()
