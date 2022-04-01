@@ -17,9 +17,17 @@
 
 #include "lcd_lib.h"
 #include "font8x8.h"
+#include "Ticker.hpp"
 
 //#include "graph_struct.hpp"
 //#include "graph_class.hpp"
+
+
+//returns 0 if pressed
+DigitalIn PTC9;   //V
+DigitalIn PTC10;  //B
+DigitalIn PTC11;  //N
+DigitalIn PTC12;  //M
 
 int main()
 {
@@ -43,8 +51,7 @@ int main()
         }
     }
 
-    cv::imshow( LCD_NAME, g_canvas );   // refresh content of "LCD"
-    cv::waitKey( 0 );                   // wait for key 
+    lcd_dontclose();
 }
 
 
