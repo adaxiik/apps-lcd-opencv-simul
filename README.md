@@ -9,4 +9,3 @@ This program is a simple SDL simulator of the MCU LCD module.
 # Notes 
 - Ticker class: [Ticker.hpp](https://github.com/adaxiik/ticker)
 - Adjust Makefile to your needs 
-- Mac seems to have issues with lcd_update() function (Possible "fix" is to add `usleep(10000)` to main loop)
