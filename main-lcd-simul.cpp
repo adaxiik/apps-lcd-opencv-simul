@@ -50,7 +50,7 @@ int main()
             lcd_put_pixel( ofs + l_limit, ofs + i, l_color_white );
         }
     }
-
+    
     lcd_dontclose();
 }
 

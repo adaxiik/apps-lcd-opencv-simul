@@ -1,6 +1,9 @@
 #include <SDL2/SDL.h>
 #include "lcd_lib.h"
 
+
+// judge me ¯\_(ツ)_/¯
+
 SDL_Window *window;
 SDL_Renderer *renderer;
 SDL_Texture *texture;
@@ -10,6 +13,8 @@ bool PTC9;
 bool PTC10;
 bool PTC11;
 bool PTC12;
+
+bool refresh_screen = false;
 
 void lcd_init()
 {
@@ -59,11 +64,16 @@ void lcd_put_pixel(int32_t t_x, int32_t t_y, uint16_t t_rgb_565)
     if (t_x < 0 || t_x >= LCD_WIDTH || t_y < 0 || t_y >= LCD_HEIGHT)
         return;
     screen_buffer[t_x + t_y * LCD_WIDTH] = t_rgb_565;
+    refresh_screen = true;
 }
 
 void lcd_update()
 {
-    SDL_UpdateTexture(texture, NULL, screen_buffer, LCD_WIDTH * 2);
+    if(refresh_screen)
+    {
+        SDL_UpdateTexture(texture, NULL, screen_buffer, LCD_WIDTH * 2);
+        refresh_screen = false;
+    }
     SDL_RenderCopy(renderer, texture, NULL, NULL);
 
     SDL_RenderPresent(renderer);
