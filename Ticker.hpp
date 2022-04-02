@@ -12,11 +12,13 @@ private:
     void (*callback)() = nullptr;
 
 public:
-    void attach(void (*callback)(), int delay)
+    void attach(void (*callback)(), std::chrono::microseconds delay)
     {
         this->callback = callback;
-        this->delay = delay*1000;
+        this->delay = std::chrono::duration_cast<std::chrono::microseconds>(delay).count();
     }
+
+
 
     void detach()
     {
