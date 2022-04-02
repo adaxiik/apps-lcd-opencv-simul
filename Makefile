@@ -1,4 +1,6 @@
 CC = g++
+#CC = clang++ -std=c++11 -stdlib=libc++ # Might be needed for mac
+
 CFLAGS = -Wall -g -O2 -pthread
 LIBS = -lm -lSDL2
 
